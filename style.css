@@ -1,0 +1,93 @@
+body  {
+    background-color:aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color:steelblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+  
+    padding: 0;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 20px;
+}
+
+.subcontainer {
+    padding: 20px 0 0 20px;
+
+}
+
+.std-button {
+    padding: 5px;
+    background-color: lightsteelblue;
+    border-radius: 5px;
+    border: solid 1px navy;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.input {
+    padding: 5px;
+    background-color: navy;
+    border-radius: 5px;
+    border: solid 1px navy;
+    color: aliceblue;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;    
+}
+
+.task {
+    padding: 5px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: solid 1px gray;
+    color: teal;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;     
+}
+
+.removeTask {
+
+    padding: 5px;
+    float: right;
+    background-color: azure;
+    border-radius: 5px;
+    border: solid 1px gray;
+    color: gray;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 10px;     
+
+}
+
+.main-container {
+    display: grid;
+    grid-template: 50px 1fr / 1fr 5fr;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.sidebar {
+    grid-row: 1/3;
+    border-right: 1px solid #3f3f63;
+    padding-left: 30px;
+
+}
