@@ -1,27 +1,47 @@
+import Project from "./modelli/Project";
+import Servizio from "./Servizio";
+import Rendering from "./Rendering";
+
+  // crea un oggetto che contenga chiavi e valori, questi ultimi sono gli id.
+  // dalla classe ti crei (trasferisci tutto questo) le costanti con i riferimenti al DOM
+
 const aggiungi = document.getElementById("add-task");
+const addProject = document.querySelector("#add-project");
+const projSidebar = document.querySelector(".sidebar-header");
+const projContainer = document.querySelector(".projectcontainer");
+const sidebarBody = document.querySelector(".sidebar-body");
 
 const ulListaAttivita = document.getElementById("task-list");
 const inputAttivita = document.getElementById("activity");
 
 aggiungi.addEventListener("click", addTask);
 
+addProject.addEventListener("click", addProjInput);
+
+const servizio = new Servizio();
+const rendering = new Rendering(servizio.projects, sidebarBody);
+
 
 let listaAttivita = [];
 
+function addProjInput() {
+  const projInput = document.createElement("input");
+  projInput.classList.add("input");
+  projInput.placeholder="Nome progetto";
+  sidebarBody.appendChild(projInput);
+
+  projInput.addEventListener("keydown", (event) => {
+    if (event.key=="Enter") {
+       servizio.addProject(projInput.value);
+
+    }
+  })
+}
+
+
+
 function addTask() 
 {
-
-  async function wait() {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-  
-    return 10;
-  }
-  
-  function f() {
-    return wait().then(result => alert(result));
-  }
-
-  f();
 
 
   listaAttivita.push({nome: inputAttivita.value, stato: ""});
